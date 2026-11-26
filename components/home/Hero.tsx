@@ -4,41 +4,48 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative isolate min-h-[680px] overflow-hidden bg-[#F5F3EE]">
+    <section className="relative isolate min-h-[900px] overflow-hidden bg-[#F5F3EE] sm:min-h-[950px] lg:min-h-[680px]">
 
-      {/* Full Width Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image */}
+      <div className="absolute inset-x-0 bottom-0 top-auto z-0 h-[280px] sm:h-[340px] lg:inset-0 lg:h-auto">
         <Image
           src="/images/hero-machines.png"
           alt="Dairy Machines India processing equipment"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-contain object-center lg:object-cover lg:object-center"
         />
       </div>
 
-      {/* Text Readability Overlay */}
+      {/* Image Readability Overlay */}
       <div
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-10 lg:hidden"
+        style={{
+          background:
+            "linear-gradient(to bottom, #F5F3EE 0%, rgba(245,243,238,0.98) 43%, rgba(245,243,238,0.75) 57%, rgba(245,243,238,0.08) 78%, transparent 100%)",
+        }}
+      />
+
+      {/* Desktop Overlay */}
+      <div
+        className="absolute inset-0 z-10 hidden lg:block"
         style={{
           background:
             "linear-gradient(90deg, rgba(245,243,238,0.98) 0%, rgba(245,243,238,0.94) 25%, rgba(245,243,238,0.72) 36%, rgba(245,243,238,0.22) 48%, transparent 60%)",
         }}
       />
 
-      
-
       {/* Hero Content */}
-      <div className="relative z-20 mx-auto flex min-h-[680px] max-w-[1440px] items-center px-6 py-20 md:px-10 lg:px-12">
+      <div className="relative z-20 mx-auto flex min-h-[900px] max-w-[1440px] items-start px-5 pb-[300px] pt-20 sm:min-h-[950px] sm:px-8 sm:pb-[360px] lg:min-h-[680px] lg:items-center lg:px-10 lg:py-20 lg:pb-20 xl:px-12">
 
-        <div className="max-w-[610px]">
+        <div className="w-full max-w-[610px]">
 
-          <p className="mb-7 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
+          <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#A17C52] sm:mb-7 sm:text-xs sm:tracking-[0.22em]">
             Complete Dairy Processing Solutions
           </p>
 
-          <h1 className="font-serif text-5xl font-medium leading-[1.06] tracking-[-0.035em] text-[#191919] sm:text-6xl lg:text-[72px]">
+          <h1 className="font-serif text-[42px] font-medium leading-[1.08] tracking-[-0.035em] text-[#191919] sm:text-6xl lg:text-[72px]">
             Engineered for
             <span className="block text-[#79563C]">
               Modern Dairy
@@ -46,17 +53,17 @@ export default function Hero() {
             Businesses
           </h1>
 
-          <p className="mt-7 max-w-[490px] text-base leading-8 text-[#45433F]">
+          <p className="mt-5 max-w-[490px] text-sm leading-7 text-[#45433F] sm:mt-7 sm:text-base sm:leading-8">
             Reliable dairy processing machinery for Ice Cream,
             Milk, Ice Candy and a wide range of dairy applications.
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-9 flex flex-wrap gap-4">
+          <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:gap-4">
 
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-3 rounded-full bg-[#282A28] px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-[#A17C52]"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#282A28] px-7 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-[#A17C52] sm:w-auto sm:px-8"
             >
               Get Best Quote
               <span>→</span>
@@ -64,7 +71,7 @@ export default function Hero() {
 
             <Link
               href="/products"
-              className="inline-flex items-center justify-center rounded-full border border-[#77766F] bg-white/60 px-8 py-4 text-sm font-medium text-[#282A28] transition-all duration-300 hover:bg-white"
+              className="inline-flex w-full items-center justify-center rounded-full border border-[#77766F] bg-white/70 px-7 py-4 text-sm font-medium text-[#282A28] transition-all duration-300 hover:bg-white sm:w-auto sm:px-8"
             >
               Explore Our Machinery
             </Link>
@@ -72,17 +79,17 @@ export default function Hero() {
           </div>
 
           {/* Key Features */}
-          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-5 border-t border-[#DEDCD5] pt-7">
+          <div className="mt-7 grid grid-cols-3 gap-2 border-t border-[#DEDCD5] pt-5 sm:mt-12 sm:flex sm:flex-wrap sm:gap-x-8 sm:gap-y-5 sm:pt-7">
 
-            <p className="text-sm font-medium text-[#282A28]">
+            <p className="text-[10px] font-medium leading-5 text-[#282A28] sm:text-sm">
               Robust Engineering
             </p>
 
-            <p className="text-sm font-medium text-[#282A28]">
+            <p className="text-[10px] font-medium leading-5 text-[#282A28] sm:text-sm">
               Complete Plant Solutions
             </p>
 
-            <p className="text-sm font-medium text-[#282A28]">
+            <p className="text-[10px] font-medium leading-5 text-[#282A28] sm:text-sm">
               Reliable Support
             </p>
 
@@ -91,11 +98,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-
-    
-    
   );
-
-  
 }
-
