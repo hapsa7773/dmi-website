@@ -1,12 +1,12 @@
 
 import Hero from "@/components/home/Hero";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
+import MarketReach from "@/components/home/MarketReach";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <WhyChooseUs />
+      <MarketReach />
     </main>
   );
 }

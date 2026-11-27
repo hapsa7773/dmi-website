@@ -6,24 +6,24 @@ export default function Hero() {
   return (
     <section className="relative isolate min-h-[900px] overflow-hidden bg-[#F5F3EE] sm:min-h-[950px] lg:min-h-[680px]">
 
-      {/* Background Image */}
-      <div className="absolute inset-x-0 bottom-0 top-auto z-0 h-[280px] sm:h-[340px] lg:inset-0 lg:h-auto">
+      {/* Full Background Image */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-machines.png"
           alt="Dairy Machines India processing equipment"
           fill
           priority
           sizes="100vw"
-          className="object-contain object-center lg:object-cover lg:object-center"
+          className="object-contain object-bottom lg:object-cover lg:object-center"
         />
       </div>
 
-      {/* Image Readability Overlay */}
+      {/* Mobile Overlay */}
       <div
         className="absolute inset-0 z-10 lg:hidden"
         style={{
           background:
-            "linear-gradient(to bottom, #F5F3EE 0%, rgba(245,243,238,0.98) 43%, rgba(245,243,238,0.75) 57%, rgba(245,243,238,0.08) 78%, transparent 100%)",
+            "linear-gradient(to bottom, rgba(245,243,238,0.99) 0%, rgba(245,243,238,0.96) 43%, rgba(245,243,238,0.78) 58%, rgba(245,243,238,0.18) 82%, rgba(245,243,238,0.02) 100%)",
         }}
       />
 
@@ -37,7 +37,7 @@ export default function Hero() {
       />
 
       {/* Hero Content */}
-      <div className="relative z-20 mx-auto flex min-h-[900px] max-w-[1440px] items-start px-5 pb-[300px] pt-20 sm:min-h-[950px] sm:px-8 sm:pb-[360px] lg:min-h-[680px] lg:items-center lg:px-10 lg:py-20 lg:pb-20 xl:px-12">
+      <div className="relative z-20 mx-auto flex min-h-[900px] max-w-[1440px] items-start px-5 pb-16 pt-20 sm:min-h-[950px] sm:px-8 lg:min-h-[680px] lg:items-center lg:px-10 lg:py-20 xl:px-12">
 
         <div className="w-full max-w-[610px]">
 
@@ -79,7 +79,7 @@ export default function Hero() {
           </div>
 
           {/* Key Features */}
-          <div className="mt-7 grid grid-cols-3 gap-2 border-t border-[#DEDCD5] pt-5 sm:mt-12 sm:flex sm:flex-wrap sm:gap-x-8 sm:gap-y-5 sm:pt-7">
+          <div className="mt-8 grid grid-cols-3 gap-2 border-t border-[#DEDCD5] pt-5 sm:mt-12 sm:flex sm:flex-wrap sm:gap-x-8 sm:gap-y-5 sm:pt-7">
 
             <p className="text-[10px] font-medium leading-5 text-[#282A28] sm:text-sm">
               Robust Engineering

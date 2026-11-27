@@ -10,22 +10,6 @@ const strengths = [
   "Strong business ethics",
 ];
 
-const majorMarkets = [
-  { name: "USA", flag: "us" },
-  { name: "UK", flag: "gb" },
-  { name: "Canada", flag: "ca" },
-  { name: "Japan", flag: "jp" },
-  { name: "Australia", flag: "au" },
-];
-
-const exportCountries = [
-  { name: "Sri Lanka", flag: "lk" },
-  { name: "Nepal", flag: "np" },
-  { name: "Bangladesh", flag: "bd" },
-  { name: "United Kingdom", flag: "gb" },
-  { name: "United Arab Emirates", flag: "ae" },
-];
-
 const businessDetails = [
   ["Nature of Business", "Manufacturer"],
   ["Additional Business", "Wholesale Business, Retail Business"],
@@ -58,53 +42,12 @@ const shipmentModes = [
   "By Sea",
 ];
 
-function CountryList({
-  countries,
-  light = false,
-}: {
-  countries: { name: string; flag: string }[];
-  light?: boolean;
-}) {
-  return (
-    <div
-      className={`mt-10 grid grid-cols-2 gap-8 border-t pt-8 sm:grid-cols-3 md:grid-cols-5 ${
-        light ? "border-[#DEDCD5]" : "border-white/20"
-      }`}
-    >
-      {countries.map((country) => (
-        <div
-          key={country.name}
-          className="flex items-center gap-3 transition-transform duration-300 hover:-translate-y-1"
-        >
-          <img
-            src={`https://flagcdn.com/w40/${country.flag}.png`}
-            alt={`${country.name} flag`}
-            width="32"
-            height="22"
-            className="h-[22px] w-8 rounded-[2px] object-cover"
-          />
-
-          <p
-            className={`text-sm font-medium md:text-base ${
-              light ? "text-[#282A28]" : "text-white"
-            }`}
-          >
-            {country.name}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function About() {
   return (
     <main className="bg-[#F5F3EE] text-[#282A28]">
-
       {/* Company Introduction */}
       <section className="px-6 py-24 md:px-10 lg:px-12">
         <div className="mx-auto grid max-w-[1440px] gap-16 lg:grid-cols-2 lg:items-center">
-
           <div>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
               About Us
@@ -147,20 +90,17 @@ export default function About() {
 
           {/* Company Image - Add actual image later */}
           <div className="min-h-[420px] bg-[#ECEAE4]" />
-
         </div>
       </section>
 
       {/* Company Factsheet */}
       <section className="border-y border-[#D8D4CB] bg-[#E9E6DF] px-6 py-16 md:px-10 lg:px-12">
         <div className="mx-auto max-w-[1440px]">
-
           <p className="mb-10 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
             Company Factsheet
           </p>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-
             <div>
               <p className="text-3xl font-medium">2024</p>
               <p className="mt-2 text-sm text-[#77766F]">Established</p>
@@ -186,7 +126,6 @@ export default function About() {
                 Nature of Business
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -194,7 +133,6 @@ export default function About() {
       {/* Complete Company Information */}
       <section className="bg-[#E7E8E5] px-6 py-24 md:px-10 lg:px-12">
         <div className="mx-auto max-w-[1440px]">
-
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
             Business Profile
           </p>
@@ -220,7 +158,6 @@ export default function About() {
 
           {/* Payment and Shipment Details */}
           <div className="mt-16 grid gap-12 border-t border-[#DEDCD5] pt-12 md:grid-cols-2">
-
             <div>
               <p className="mb-6 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
                 Payment Details
@@ -262,50 +199,13 @@ export default function About() {
                 ))}
               </div>
             </div>
-
           </div>
-        </div>
-      </section>
-
-
-      {/* Major Market */}
-      <section className="bg-[#282A28] px-6 py-20 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-[1440px]">
-
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#C4A27D]">
-            Our Reach
-          </p>
-
-          <h2 className="text-4xl font-medium text-white md:text-5xl">
-            Major Market
-          </h2>
-
-          <CountryList countries={majorMarkets} />
-
-        </div>
-      </section>
-
-      {/* Top Export Countries */}
-      <section className="bg-[#F5F3EE] px-6 py-20 md:px-10 lg:px-12">
-        <div className="mx-auto max-w-[1440px]">
-
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
-            International Trade
-          </p>
-
-          <h2 className="text-4xl font-medium text-[#282A28] md:text-5xl">
-            Top Export Countries
-          </h2>
-
-          <CountryList countries={exportCountries} light />
-
         </div>
       </section>
 
       {/* Infrastructure & Team */}
       <section className="bg-[#F5F3EE] px-6 py-24 md:px-10 lg:px-12">
         <div className="mx-auto max-w-[1440px]">
-
           <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
@@ -324,10 +224,8 @@ export default function About() {
           </div>
 
           <div className="grid gap-5 lg:grid-cols-2">
-
             {/* Manufacturing Unit */}
             <div className="group relative min-h-[420px] overflow-hidden bg-[#E9E6DF] lg:row-span-2">
-
               <div className="absolute inset-0 bg-[#E9E6DF]" />
 
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between border-t border-[#D8D4CB] bg-[#F5F3EE] p-7">
@@ -351,7 +249,6 @@ export default function About() {
 
             {/* Our Team */}
             <div className="group relative min-h-[280px] overflow-hidden bg-[#E9E6DF]">
-
               <div className="absolute inset-0 bg-[#E9E6DF]" />
 
               <div className="absolute inset-x-0 bottom-0 flex items-center justify-between border-t border-[#D8D4CB] bg-[#F5F3EE] p-6">
@@ -371,7 +268,6 @@ export default function About() {
 
             {/* Our Office */}
             <div className="group relative min-h-[280px] overflow-hidden bg-[#E9E6DF]">
-
               <div className="absolute inset-0 bg-[#E9E6DF]" />
 
               <div className="absolute inset-x-0 bottom-0 flex items-center justify-between border-t border-[#D8D4CB] bg-[#F5F3EE] p-6">
@@ -391,7 +287,6 @@ export default function About() {
 
             {/* Our Sign Board */}
             <div className="group relative min-h-[220px] overflow-hidden bg-[#E9E6DF] lg:col-span-2">
-
               <div className="absolute inset-0 bg-[#E9E6DF]" />
 
               <div className="absolute inset-x-0 bottom-0 flex items-center justify-between border-t border-[#D8D4CB] bg-[#F5F3EE] p-6">
@@ -408,111 +303,100 @@ export default function About() {
                 <span className="text-2xl text-[#A17C52]">↗</span>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
+      {/* Certificates & Recognition */}
+      <section className="bg-[#F5F3EE] px-6 py-24 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
+                Official Documentation
+              </p>
 
+              <h2 className="text-4xl font-medium md:text-5xl">
+                Certificates &
+                <span className="block text-[#8B765E]">Recognition</span>
+              </h2>
+            </div>
 
-
-
-{/* Certificates & Recognition */}
-<section className="bg-[#F5F3EE] px-6 py-24 md:px-10 lg:px-12">
-  <div className="mx-auto max-w-[1440px]">
-
-    <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-      <div>
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#A17C52]">
-          Official Documentation
-        </p>
-
-        <h2 className="text-4xl font-medium md:text-5xl">
-          Certificates &
-          <span className="block text-[#8B765E]">Recognition</span>
-        </h2>
-      </div>
-
-      <p className="max-w-[390px] text-sm leading-7 text-[#77766F]">
-        Official Importer-Exporter Code certificate
-        issued to Dairy Machines India.
-      </p>
-    </div>
-
-    <div className="grid items-center gap-12 border border-[#DEDCD5] bg-[#E9E6DF] p-6 md:grid-cols-2 md:p-10">
-
-      {/* Original IEC Certificate */}
-      <a
-        href="https://5.imimg.com/data5/SELLER/Default/2024/4/414736144/HH/BA/TQ/197985230/certificate-of-iec-page-0001-1000x1000.jpg"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex justify-center bg-white p-5 transition-transform duration-300 hover:scale-[1.01]"
-      >
-        <img
-          src="https://5.imimg.com/data5/SELLER/Default/2024/4/414736144/HH/BA/TQ/197985230/certificate-of-iec-page-0001-1000x1000.jpg"
-          alt="Original Importer Exporter Code certificate of Dairy Machines India"
-          className="max-h-[650px] w-full object-contain"
-        />
-      </a>
-
-      {/* Certificate Details */}
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#A17C52]">
-          Importer Exporter Code
-        </p>
-
-        <h3 className="mt-5 text-3xl font-medium">
-          IEC Certificate
-        </h3>
-
-        <p className="mt-5 text-sm leading-7 text-[#77766F]">
-          Official certificate issued by the Directorate General
-          of Foreign Trade, Government of India, to Dairy Machines India.
-        </p>
-
-        <div className="mt-9 border-t border-[#D4D0C7]">
-          <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
-            <span className="text-sm text-[#77766F]">Firm Name</span>
-            <span className="text-sm font-medium text-right">Dairy Machines India</span>
+            <p className="max-w-[390px] text-sm leading-7 text-[#77766F]">
+              Official Importer-Exporter Code certificate
+              issued to Dairy Machines India.
+            </p>
           </div>
 
-          <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
-            <span className="text-sm text-[#77766F]">IEC Number</span>
-            <span className="text-sm font-medium">AAWFD2017J</span>
-          </div>
+          <div className="grid items-center gap-12 border border-[#DEDCD5] bg-[#E9E6DF] p-6 md:grid-cols-2 md:p-10">
+            {/* Original IEC Certificate */}
+            <a
+              href="https://5.imimg.com/data5/SELLER/Default/2024/4/414736144/HH/BA/TQ/197985230/certificate-of-iec-page-0001-1000x1000.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center bg-white p-5 transition-transform duration-300 hover:scale-[1.01]"
+            >
+              <img
+                src="https://5.imimg.com/data5/SELLER/Default/2024/4/414736144/HH/BA/TQ/197985230/certificate-of-iec-page-0001-1000x1000.jpg"
+                alt="Original Importer Exporter Code certificate of Dairy Machines India"
+                className="max-h-[650px] w-full object-contain"
+              />
+            </a>
 
-          <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
-            <span className="text-sm text-[#77766F]">Date of Issue</span>
-            <span className="text-sm font-medium">27/04/2024</span>
-          </div>
+            {/* Certificate Details */}
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#A17C52]">
+                Importer Exporter Code
+              </p>
 
-          <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
-            <span className="text-sm text-[#77766F]">Nature of Concern</span>
-            <span className="text-sm font-medium">Partnership</span>
-          </div>
+              <h3 className="mt-5 text-3xl font-medium">
+                IEC Certificate
+              </h3>
 
-          <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
-            <span className="text-sm text-[#77766F]">Signatory</span>
-            <span className="text-sm font-medium">Sawan Chahal</span>
+              <p className="mt-5 text-sm leading-7 text-[#77766F]">
+                Official certificate issued by the Directorate General
+                of Foreign Trade, Government of India, to Dairy Machines India.
+              </p>
+
+              <div className="mt-9 border-t border-[#D4D0C7]">
+                <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
+                  <span className="text-sm text-[#77766F]">Firm Name</span>
+                  <span className="text-sm font-medium text-right">Dairy Machines India</span>
+                </div>
+
+                <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
+                  <span className="text-sm text-[#77766F]">IEC Number</span>
+                  <span className="text-sm font-medium">AAWFD2017J</span>
+                </div>
+
+                <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
+                  <span className="text-sm text-[#77766F]">Date of Issue</span>
+                  <span className="text-sm font-medium">27/04/2024</span>
+                </div>
+
+                <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
+                  <span className="text-sm text-[#77766F]">Nature of Concern</span>
+                  <span className="text-sm font-medium">Partnership</span>
+                </div>
+
+                <div className="flex justify-between gap-4 border-b border-[#D4D0C7] py-5">
+                  <span className="text-sm text-[#77766F]">Signatory</span>
+                  <span className="text-sm font-medium">Sawan Chahal</span>
+                </div>
+              </div>
+
+              <a
+                href="https://5.imimg.com/data5/SELLER/Default/2024/4/414736144/HH/BA/TQ/197985230/certificate-of-iec-page-0001-1000x1000.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-3 bg-[#282A28] px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#A17C52]"
+              >
+                View Original Certificate <span>↗</span>
+              </a>
+            </div>
           </div>
         </div>
-
-        <a
-          href="https://5.imimg.com/data5/SELLER/Default/2024/4/414736144/HH/BA/TQ/197985230/certificate-of-iec-page-0001-1000x1000.jpg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-3 bg-[#282A28] px-7 py-4 text-sm font-medium text-white transition-colors hover:bg-[#A17C52]"
-        >
-          View Original Certificate <span>↗</span>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
+      </section>
     </main>
   );
 }

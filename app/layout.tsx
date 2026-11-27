@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Preloader from "../components/layout/Preloader";
 import "./globals.css";
 
 const inter = Inter({
@@ -35,9 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${manrope.variable} antialiased`}>
+        <Preloader />
         <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
